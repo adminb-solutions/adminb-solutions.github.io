@@ -1,1 +1,13 @@
+title: AdminB solutions
+description: ramblings of a couple of Sitecorians
 theme: jekyll-theme-minimal
+livereload: true
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

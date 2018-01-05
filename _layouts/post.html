@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+
+{% capture tags_size %}{{page.tags | size}}{% endcapture %}
+{% unless tags_size == "0"  %}
+<br/>
+<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+{% endunless %}
+<h1>{{ page.title }}
+
+</h1>
+
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+{{content}}
+
+{% if page.category %}
+<hr/>
+  <small>See other posts about <a href="/category/{{page.category}}">{{page.category | capitalize}}</a></small>
+{% endif %}

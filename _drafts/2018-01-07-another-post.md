@@ -1,6 +1,6 @@
 ---
-author: RJ
-title: Sample Post
+author: Win-Chuck
+title: Another Post
 category: sitecore
 tags: demo adminb test
 ---
