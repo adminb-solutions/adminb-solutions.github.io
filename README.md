@@ -38,11 +38,11 @@ tags: demo adminb test
 ---
 ```
 
-Categories and tags are entire optional.
-
-Post should be placed in the *_posts* folder and named with the format ```yyyy-mm-dd-title.ext```.  
+Post should be placed in the *_posts* folder and named with the format ```yyyy-mm-dd-title.ext```. They should include a title property.
 
 ## Optional attributes
+
+The blog posts Front Matter can include extra optional properties:
 
 - Author
 - Category: a post can only be assigned a single category. It will affect the url: /
