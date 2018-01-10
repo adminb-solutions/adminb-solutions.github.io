@@ -1,24 +1,28 @@
 ---
 layout: default
 ---
+<div class="date">
+    <small >{{page.date | date: "%e %B %Y"}}
+            {% include post-tags.html tags=page.tags%}
+    </small>
+    <br/>
+</div>
 
-
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-
-{% capture tags_size %}{{page.tags | size}}{% endcapture %}
-{% unless tags_size == "0"  %}
-<br/>
-<small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endunless %}
-<h1>{{ page.title }}
-
-</h1>
-
-<p class="view">by {{ page.author | default: site.author }}</p>
+<h1>{{page.title}}</h1>
+{% if page.author%}
+<div class="author">
+     By {{page.author}}
+    </div>
+{% endif%}
 
 {{content}}
 
-{% if page.category %}
-<hr/>
-  <small>See other posts about <a href="/category/{{page.category}}">{{page.category | capitalize}}</a></small>
-{% endif %}
+<div class="category">
+    <small>    
+        {% if page.category %}
+        Check other blogposts about <a href="/category/{{page.category}}">
+            {{page.category | capitalize}}
+        </a>
+        {% endif %}
+    </small>
+</div>

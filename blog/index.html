@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<h1>List of all blog posts</h1>
+
+{% assign year_posts = paginator.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in year_posts %}
+    <h2>{{year.name}}</h2>
+
+    <!-- {% assign month_posts = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
+    {% for month in month_posts %}
+        <h3>{{month.name}}</h3> -->
+               
+        {% include list-of-posts.html posts = year.items %}    
+      
+    <!-- {% endfor %} -->
+{% endfor %}
+
+<div class="paginator">
+
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+    <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    
+{% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+    <span class="next ">Next</span>
+    {% endif %}
+</div>
+    
+    

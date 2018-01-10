@@ -2,3 +2,22 @@
 layout: default
 title: Blog
 ---
+
+{% for post in site.posts limit:3 %}
+    <h1>
+        <a href="{{post.url}}">
+            {{post.title}}
+        </a>
+    </h1>
+        
+    <small>{{post.date | date: "%e %B %Y"}}</small>
+        {{post.excerpt}}
+
+    <a href="{{post.url}}"> &hellip; read full blog post </a>
+{% endfor %}
+<hr/>
+<div>
+    <a href="/blog">
+        All posts
+    </a>
+</div>

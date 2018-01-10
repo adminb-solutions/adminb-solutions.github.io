@@ -1,8 +1,14 @@
 title: AdminB solutions
 description: ramblings of a couple of Sitecorians
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
 livereload: true
 permalink: pretty
+show_downloads: false
+github:
+  is_project_page: false
+
+paginate: 20
+paginate_path: "/blog/page:num/"
 
 defaults:
   -
@@ -11,3 +17,22 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      excerpt_separator: <!-- more -->
+  -
+    scope:
+      path: "tag"
+    values:
+      layout: "tag"
+  -
+    scope:
+      path: "category"
+    values:
+      layout: "category"
+
+exclude: 
+  - "docker-compose.yml"
+  - "Dockerfile"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - ".gitignore"

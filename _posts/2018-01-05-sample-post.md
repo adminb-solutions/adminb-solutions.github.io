@@ -1,14 +1,12 @@
 ---
 author: RJ
-title: Sample Post
 category: sitecore
 tags: demo adminb test
+title: Sample Post
 ---
 
-# Welcome
-
-This is just a test to show if I can make this work
-
+This is just a test to show if I can make this work.
+<!-- more -->
 ## Introduction
 
 And this is how it all started
@@ -23,13 +21,13 @@ You can add images:
 
 and even code!
 
-{% highlight xml %}
+```xml
 <config>
     <asdf>hello</asdf>
 </config>
-{% endhighlight %}
+```
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 public class Test
 {
     public Test() {}

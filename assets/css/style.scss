@@ -1,0 +1,63 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+    padding: 1rem 6rem;
+}
+
+.page-header a{
+    color: white;
+}
+
+div.author {
+    margin: -1rem 0 1rem 0;
+}
+
+.main-content h1:first-of-type{
+    margin-top: 0.2rem;
+}
+
+.main-content .category{
+    text-align: center;
+}
+
+a{
+    color: #159957;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    border-bottom: 1px dotted #159957;
+}
+
+.paginator{
+    margin-top: 1rem;
+}
+.paginator .page_number{
+    padding-right: .35rem;
+    padding-left: .35rem;
+}
+
+.paginator .previous{
+    padding-right: .7rem;
+    border-right: 1px solid #159957
+}
+
+.paginator .next{
+    padding-left: .7rem;
+    border-left: 1px solid #159957   
+}
+
+.post_list{
+    list-style: none;
+}
+
+.post_list .author{
+    font-size: .9em;
+}
+
+.post_list .tags{
+    font-size: .8em
+}

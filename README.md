@@ -7,7 +7,7 @@ The blog uses [Jekyll](https://jekyllrb.com/) for static page generation and get
 You can view a local copy of the blog, useful to view other branches, make changes, test things. 
 You could install your own copy of Jekyll but it is easier to just use Docker. The repository is already set up to use a Linux Docker container. 
 
-Simply run ```docker-compose up -d``` from the root of the project. The site will be available in ```localhost``` on your host machine.
+Simply run ```docker-compose up -d``` (or use the commands from the [Docker extension in Visual Studio Code](https://code.visualstudio.com/docs/languages/dockerfile#_docker-commands)) from the root of the project. The site will be available in ```localhost``` on your host machine.
 
 Changes to the source files (new posts, pages, changes, etc.) are automatically picked up. You will have to reload the page in the browser though. (Unfortunately LiveReload requires more extensive configuration using a Windows host).
 
@@ -42,12 +42,25 @@ Categories and tags are entire optional.
 
 Post should be placed in the *_posts* folder and named with the format ```yyyy-mm-dd-title.ext```.  
 
+## Optional attributes
+
+- Author
+- Category: a post can only be assigned a single category. It will affect the url: /
+- Tags: supports multiple values
+
+In order to support lists with all the posts included in a particular tag or category a page must exist in the corresponding location. For categories: ```/category/<name-of-category>``` and for tags ```/tag/<name-of-tag>```. Those files as a minimum must contain an empty front matter.
+
+``` frontmatter
+---
+---
+```
+
 ## Adding code snippets
 
 In order to insert code snippets with nice syntax colouring use the following tags:
 
 ``` liquid
-{% highlight csharp %}
+{% highlight csharp linenos %}
 public class Test
 {
     public Test() {}
@@ -59,7 +72,15 @@ public class Test
 {% endhighlight %}
 ```
 
-There are over [70 languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) available.
+There are over [70 languages](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers) available. You can add the `linenos` directive to show line numbers.
+
+Alternatively you can also use the usual markdown syntax of three back-ticks:
+
+    ```csharp
+    public void static Main()
+    {
+    }
+    ```
 
 ## Modification flow
 

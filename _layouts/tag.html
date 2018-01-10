@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% assign pagename = page.name | split: '.' | first %}
+{% assign tag = page.tag | default: pagename %}
+{% capture pagetitle %}
+    {% if page.title %}
+        {{ page.title }}
+    {% else %}
+        {{ tag | capitalize }}
+    {% endif %}
+{% endcapture %}
+
+<h2>Posts tagged as {{pagetitle}}</h1>
+
+{{content}}
+
+{% assign list_of_posts = site.tags[tag] %}
+{% include list-of-posts.html posts = list_of_posts %}    
